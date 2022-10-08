@@ -38,7 +38,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = 'localhost';
+const defaultNetwork = 'hardhat';
 
 const getMnemonic = () => {
   try {
@@ -465,7 +465,6 @@ task('mineContractAddress', 'Looks for a deployer account that will give leading
 
       contract_address = contract_address_long.substring(24); // Trim the first 24 characters.
     }
-
     console.log(`⛏  Account Mined as ${address} and set as mnemonic in packages/hardhat`);
     console.log(`📜 This will create the first contract: ${chalk.magenta(`0x${contract_address}`)}`);
     console.log("💬 Use 'yarn run account' to get more information about the deployment account.");
